@@ -11,11 +11,17 @@ app.url_map.strict_slashes = False
 
 @app.route('/')
 def task_0():
+    """
+        task 0
+    """
     return "Hello HBNB!"
 
 
 @app.route('/hbnb')
 def task_1():
+    """
+        task 1
+    """
     return "HBNB"
 
 
