@@ -12,9 +12,10 @@
 
     You must use the option strict_slashes=False in your route definition
 """
+
+
 from flask import Flask, request
 from markupsafe import escape
-
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
