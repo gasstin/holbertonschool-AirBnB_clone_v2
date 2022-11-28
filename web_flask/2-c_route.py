@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """task 2: Write a script that starts a Flask web application"""
-
-
 from flask import Flask, request
 from markupsafe import escape
 
@@ -31,6 +29,8 @@ def task_2(text):
     """
     display “C ” followed by the value of
     the text variable (replace underscore _ symbols with a space )
+
+    text: is the text to print
     """
     text = text.replace("_", " ")
     return f"C {escape(text)}"

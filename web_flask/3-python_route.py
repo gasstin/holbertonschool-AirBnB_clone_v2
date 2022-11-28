@@ -1,19 +1,7 @@
 #!/usr/bin/python3
 """
-    Your web application must be listening on 0.0.0.0, port 5000
-    Routes:
-    /: display “Hello HBNB!”
-    /hbnb: display “HBNB”
-    /c/<text>: display “C ”, followed by the value of the text variable
-    (replace underscore _ symbols with a space )0
-    /python/<text>: display “Python ”, followed by the value of
-    the text variable (replace underscore _ symbols with a space )
-    The default value of text is “is cool”
-
-    You must use the option strict_slashes=False in your route definition
+task 3: Write a script that starts a Flask web application
 """
-
-
 from flask import Flask, request
 from markupsafe import escape
 
@@ -42,6 +30,8 @@ def task_2(text):
     """
     display “C ” followed by the value of
     the text variable (replace underscore _ symbols with a space )
+    
+    text: is the text to print
     """
 
     text = text.replace("_", " ")
@@ -54,6 +44,8 @@ def task_3(text):
     """
     display “Python ”, followed by the value
     of the text variable (replace underscore _ symbols with a space )
+
+    text: is the text to print
     """
     text = text.replace("_", " ")
     return f"python {escape(text)}"
