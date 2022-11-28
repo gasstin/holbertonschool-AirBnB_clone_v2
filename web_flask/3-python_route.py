@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    task 2
+    task 3
 
     Write a script that starts a Flask web application:
 """
@@ -30,9 +30,22 @@ def task_1():
 
 @app.route('/c/<text>')
 def task_2(text):
-    # is the text to print
+    # text: is the text to print
     text = text.replace("_", " ")
     return f"C {escape(text)}"
+
+
+@app.route('/python/', defaults={'text': 'is cool'})
+@app.route('/python/<text>')
+def task_3(text):
+    """
+        /python/<text>: display “python” followed by the value of
+        the text variable (replace underscore _ symbols with a space )
+
+        text: is the text to print. Default value = is cool.
+    """
+    text = text.replace("_", " ")
+    return f"python {escape(text)}"
 
 
 if __name__ == '__main__':
