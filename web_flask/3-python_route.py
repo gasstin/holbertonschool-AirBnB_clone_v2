@@ -31,7 +31,8 @@ def task_1():
 @app.route('/c/<text>')
 def task_2(text):
     """
-    text: is the text to print.
+    display “C ” followed by the value of
+    the text variable (replace underscore _ symbols with a space )
     """
 
     text = text.replace("_", " ")
@@ -42,9 +43,9 @@ def task_2(text):
 @app.route('/python/<text>')
 def task_3(text):
     """
-    text: is the text to print. Default value = is cool.
+    display “Python ”, followed by the value
+    of the text variable (replace underscore _ symbols with a space )
     """
-
     text = text.replace("_", " ")
     return f"python {escape(text)}"
 
