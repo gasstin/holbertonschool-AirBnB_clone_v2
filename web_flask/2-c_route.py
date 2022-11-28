@@ -17,7 +17,7 @@ app.url_map.strict_slashes = False
 @app.route('/')
 def task_0():
     """
-    task 0
+    Returns Hello HBNB for the '/' url
     """
     return "Hello HBNB!"
 
@@ -25,7 +25,7 @@ def task_0():
 @app.route('/hbnb')
 def task_1():
     """
-    task 1
+    Returns HBNB for the /hbnb route
     """
     return "HBNB"
 
