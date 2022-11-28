@@ -32,8 +32,7 @@ def task_2(text):
 
     text: is the text to print
     """
-    text = text.replace("_", " ")
-    return f"C {escape(text)}"
+    return "Python {}".format(text.replace('_', ' '))
 
 
 if __name__ == '__main__':
