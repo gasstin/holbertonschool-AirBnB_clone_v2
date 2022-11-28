@@ -21,6 +21,10 @@ def task_1():
 
 @app.route('/c/<text>')
 def task_2(text):
+    """
+        /c/<text>: display “C ” followed by the value of
+        the text variable (replace underscore _ symbols with a space )
+    """
     text = text.replace("_", " ")
     return f"C {escape(text)}"
 
