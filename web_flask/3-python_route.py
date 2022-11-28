@@ -33,9 +33,7 @@ def task_2(text):
     
     text: is the text to print
     """
-
-    text = text.replace("_", " ")
-    return f"C {escape(text)}"
+    return "C {}".format(text.replace('_', ' '))
 
 
 @app.route('/python/', defaults={'text': 'is cool'})
@@ -45,10 +43,11 @@ def task_3(text):
     display “Python ”, followed by the value
     of the text variable (replace underscore _ symbols with a space )
 
-    text: is the text to print
+     Args:
+            text: is the text to print
     """
     text = text.replace("_", " ")
-    return f"python {escape(text)}"
+    return f"python {text}"
 
 
 if __name__ == '__main__':

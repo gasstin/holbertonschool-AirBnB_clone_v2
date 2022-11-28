@@ -32,7 +32,7 @@ def task_2(text):
 
     text: is the text to print
     """
-    return "Python {}".format(text.replace('_', ' '))
+    return "C {}".format(text.replace('_', ' '))
 
 
 if __name__ == '__main__':
