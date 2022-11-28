@@ -30,7 +30,7 @@ def task_2(text):
     """
     display “C ” followed by the value of
     the text variable (replace underscore _ symbols with a space )
-    
+
     text: is the text to print
     """
     return "C {}".format(text.replace('_', ' '))
@@ -43,7 +43,7 @@ def task_3(text):
     display “Python ”, followed by the value
     of the text variable (replace underscore _ symbols with a space )
     """
-    return "python {}".format(text.replace("_", " "))
+    return "Python {}".format(text.replace("_", " "))
 
 
 if __name__ == '__main__':
