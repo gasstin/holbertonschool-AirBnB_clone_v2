@@ -42,12 +42,8 @@ def task_3(text):
     """
     display “Python ”, followed by the value
     of the text variable (replace underscore _ symbols with a space )
-
-     Args:
-            text: is the text to print
     """
-    text = text.replace("_", " ")
-    return f"python {text}"
+    return "python {}".format(text.replace("_", " "))
 
 
 if __name__ == '__main__':
