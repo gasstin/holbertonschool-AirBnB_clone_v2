@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""
-    task 2
-
-    Write a script that starts a Flask web application:
-"""
+"""task 2: Write a script that starts a Flask web application"""
 
 
 from flask import Flask, request
