@@ -30,7 +30,10 @@ def task_1():
 
 @app.route('/c/<text>')
 def task_2(text):
-    # is the text to print
+    """
+        text: is the text to print.
+    """
+
     text = text.replace("_", " ")
     return f"C {escape(text)}"
 
