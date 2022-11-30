@@ -30,10 +30,10 @@ def close_fun():
 
 @app.route('/states_list')
 def task_7():
-    list_states = []
-    for coor in storage.all('State').values():
-        list_states = list_states.append(coor)
-    return render_template("7-states_list.html", list_states=list_states)
+    states_list = []
+    for state in storage.all('State').values():
+        states_list.append(state.to_dict())
+    return render_template("7-states_list.html", states_list=states_list)
 
 
 if __name__ == '__main__':
