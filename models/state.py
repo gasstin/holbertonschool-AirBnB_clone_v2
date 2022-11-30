@@ -19,9 +19,8 @@ class State(BaseModel, Base):
         def cities(self):
             """ For FileStorage """
             from models.__init__ import storage
-            list_of_cities = []
+            cities = []
             for value_city in storage.all('City').values():
-                value_city = value_city.to_dict()
-                if value_city['state_id'] == self.id:
-                    list_of_cities.append(str(value_city))
-            return list_of_cities
+                if value_city.state_id == self.id:
+                    cities.append(value_city)
+            return cities
