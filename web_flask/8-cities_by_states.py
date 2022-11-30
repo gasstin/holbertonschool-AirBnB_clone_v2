@@ -15,8 +15,8 @@ Routes:
     LI tag: description of one State: <state.id>: <B><state.name></B>
 """
 from flask import Flask, request, render_template
-from markupsafe import escape
 from models import storage
+from os import getenv
 
 
 app = Flask(__name__)
@@ -34,8 +34,12 @@ def task_8():
     cities_list = []
     for state in storage.all('State').values():
         states_list.append(state)
-    for city in storage.all('City').values():
-        cities_list.append(city)
+        if getenv('HBNB_TYPE_STORAGE') == 'db':
+            for city_db in state.cities:
+                cities_list.append(city_db)
+        else:
+            for city_fs in state.cities():
+                cities_list.append(city_fs)
     return render_template("8-cities_by_states.html", states_list=states_list,
                            cities_list=cities_list)
 
