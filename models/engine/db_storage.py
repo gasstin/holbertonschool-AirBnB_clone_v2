@@ -3,7 +3,7 @@
 import json
 from os import getenv
 from sqlalchemy import create_engine, MetaData
-from sqlalchemy.orm import sessionmaker, scoped_session
+from sqlalchemy.orm import sessionmaker, scoped_session, Session
 
 
 class DBStorage:
@@ -12,10 +12,12 @@ class DBStorage:
     __session = None
 
     def __init__(self):
-        self.__engine = create_engine(f"mysql+mysqldb://\
-{getenv('HBNB_MYSQL_USER')}:\
-{getenv('HBNB_MYSQL_PWD')}@{getenv('HBNB_MYSQL_HOST')}:3306/\
-{getenv('HBNB_MYSQL_DB')}", pool_pre_ping=True)
+        self.__engine = create_engine("mysql+mysqldb://{}:{}@{}:3306/{}".
+                                      format(getenv('HBNB_MYSQL_USER'),
+                                             getenv('HBNB_MYSQL_PWD'),
+                                             getenv('HBNB_MYSQL_HOST'),
+                                             getenv('HBNB_MYSQL_DB')),
+                                      pool_pre_ping=True)
 
         if getenv('HBNB_ENV') == 'test':  # drop all tables
             MetaData.drop_all(self.__engine)
@@ -92,4 +94,3 @@ class DBStorage:
         call remove() method on the private session attribute (self.__session)
         """
         self.__session.close()
-        # Session.close()
