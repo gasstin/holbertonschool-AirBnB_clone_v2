@@ -28,12 +28,16 @@ def close_function(exit):
     storage.close()
 
 
-@app.route('/states_list')
-def task_7():
-    list_states = []
-    for coor in storage.all('State').values():
-        list_states = list_states.append(coor)
-    return render_template("7-states_list.html", list_states=list_states)
+@app.route('/cities_by_states')
+def task_8():
+    states_list = []
+    cities_list = []
+    for state in storage.all('State').values():
+        states_list.append(state)
+    for city in storage.all('City').values():
+        cities_list.append(city)
+    return render_template("8-cities_by_states.html", states_list=states_list,
+                           cities_list=cities_list)
 
 
 if __name__ == '__main__':
