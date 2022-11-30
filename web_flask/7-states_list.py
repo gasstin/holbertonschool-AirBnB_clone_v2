@@ -24,7 +24,7 @@ app.url_map.strict_slashes = False
 
 
 @app.teardown_appcontext
-def close_fun():
+def close_function(exit):
     storage.close()
 
 
@@ -32,7 +32,7 @@ def close_fun():
 def task_7():
     states_list = []
     for state in storage.all('State').values():
-        states_list.append(state.to_dict())
+        states_list.append(state)
     return render_template("7-states_list.html", states_list=states_list)
 
 
