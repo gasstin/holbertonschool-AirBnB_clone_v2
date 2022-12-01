@@ -59,7 +59,7 @@ def task_9_cities(id):
                     cities_list.append(city_fs)
             state_to_html = state
     return render_template("9-states.html", state_to_html=state_to_html,
-                           cities_list=cities_list, id = id)
+                           cities_list=cities_list, id=id)
 
 
 if __name__ == '__main__':
