@@ -14,8 +14,7 @@ Routes:
         sorted by name (A->Z) tip
     LI tag: description of one State: <state.id>: <B><state.name></B>
 """
-from flask import Flask, request, render_template
-from markupsafe import escape
+from flask import Flask, render_template
 from models import storage
 
 
@@ -31,8 +30,8 @@ def close_function(exit):
 @app.route('/states_list')
 def task_7():
     list_states = []
-    for coor in storage.all('State').values():
-        list_states = list_states.append(coor)
+    for state in storage.all('State').values():
+        list_states.append(state)
     return render_template("7-states_list.html", list_states=list_states)
 
 
