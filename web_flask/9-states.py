@@ -39,7 +39,7 @@ def close_function(exit):
 def task_9_states():
     list_states = []
     for state in storage.all('State').values():
-        list_states = list_states.append(state)
+        list_states.append(state)
     return render_template("9-states.html", states_list=list_states)
 
 
