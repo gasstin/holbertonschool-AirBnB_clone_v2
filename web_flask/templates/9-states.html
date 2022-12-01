@@ -4,23 +4,25 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-        {% if not state_to_html and not cities_list %}
+        {% if not state_to_html %}
         <H1>States</H1>
             <UL>
             {% for state in states_list|sort(attribute='name') %}
             <LI>{{state.id|e}}: <B>{{state.name|e}}</B></LI>
             {% endfor %}
             </UL>
-        {% elif not states_list and state_to_html %}
-            <H1>State: {{ state_to_html.name}}</H1>
-            <H3>Cities:</H3>
-            <UL>
-                {% for city in cities_list|sort(attribute='name') %}
-                    <LI>{{city.id|e}}: <B>{{city.name|e}}</B></LI>
-                {% endfor %}
-            </UL>
         {% else %}
-            <H1>Not found!</H1>
+            {% if states_list and state_to_html %}
+                <H1>State: {{ state_to_html.name}}</H1>
+                <H3>Cities:</H3>
+                <UL>
+                    {% for city in cities_list|sort(attribute='name') %}
+                        <LI>{{city.id|e}}: <B>{{city.name|e}}</B></LI>
+                    {% endfor %}
+                </UL>
+            {% else %}
+                <H1>Not found!</H1>
+            {% endif %}
         {% endif %}
     </BODY>
 </HTML>
