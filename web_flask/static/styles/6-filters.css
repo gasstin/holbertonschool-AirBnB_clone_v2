@@ -40,15 +40,16 @@
 
 	border: 1px solid #DDDDDD;
 	border-radius: 4px;
-	max-height: 300px;
 }
 
 .locations:hover .popover {
 	display: inline-block;
+	max-height: 300px;
 }
 
 .filter_amenities:hover .popover {
 	display: inline-block;
+	max-height: 300px;
 }
 
 ul {
