@@ -32,7 +32,7 @@ def task_7():
     list_states = []
     for state in storage.all('State').values():
         list_states.append(state)
-    return render_template("7-states_list.html", list_states=list_states)
+    return render_template("7-states_list.html", states_list=list_states)
 
 
 if __name__ == '__main__':
