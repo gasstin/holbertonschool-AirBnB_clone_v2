@@ -33,17 +33,22 @@ def close_function(exit):
 @app.route('/hbnb_filters')
 def task_10():
     cities_list = []
+    states_list = []
+    amenities_list = []
     for state in storage.all('State').values():
+        states_list.append(state)
         if getenv('HBNB_TYPE_STORAGE') == 'db':
             for city_db in state.cities:
                 cities_list.append(city_db)
         else:
             for city_fs in state.cities():
                 cities_list.append(city_fs)
+    for amenity in storage.all('State').values():
+        amenities_list.append(amenity)
     return render_template("10-hbnb_filters.html",
-                           state_list=storage.all('State').values(),
+                           state_list=states_list,
                            cities_list=cities_list,
-                           amenities_list=storage.all('Amenity').values())
+                           amenities_list=amenities_list)
 
 
 if __name__ == '__main__':
