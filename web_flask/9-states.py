@@ -46,6 +46,7 @@ def task_9_states():
 @app.route('/states/<id>')
 def task_9_cities(id):
     cities_list = []
+    state_to_html = None
     for state in storage.all('State').values():
         if state.id == id:
             if getenv('HBNB_TYPE_STORAGE') == 'db':

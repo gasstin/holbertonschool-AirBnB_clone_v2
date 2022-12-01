@@ -4,7 +4,7 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-        {% if state_list %}
+        {% if states_list %}
         <H1>States</H1>
             <UL>
             {% for state in states_list|sort(attribute='name') %}
@@ -19,7 +19,7 @@
                     <LI>{{city.id|e}}: <B>{{city.name|e}}</B></LI>
                 {% endfor %}
             </UL>
-        {% else %}
+        {% elif not state_to_html and not cities_list and not states_list %}
             <H1>Not found!</H1>
         {% endif %}
     </BODY>
