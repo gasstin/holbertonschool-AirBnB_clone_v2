@@ -4,14 +4,14 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-        {% if states_list %}
+        {% if not state_to_html and not cities_list %}
         <H1>States</H1>
             <UL>
             {% for state in states_list|sort(attribute='name') %}
             <LI>{{state.id|e}}: <B>{{state.name|e}}</B></LI>
             {% endfor %}
             </UL>
-        {% elif state_to_html and cities_list%}
+        {% elif not states_list %}
             <H1>State: {{ state_to_html.name}}</H1>
             <H3>Cities:</H3>
             <UL>
